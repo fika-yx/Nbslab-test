@@ -2007,46 +2007,7 @@ __STATIC_INLINE q31_t arm_div_q63_to_q31(q63_t num, q31_t den)
         q15_t * pDst,
         uint32_t blockSize);
 
-  /**
-   * @brief Processing function for the Q31 Biquad cascade filter
-   * @param[in]  S          points to an instance of the Q31 Biquad cascade structure.
-   * @param[in]  pSrc       points to the block of input data.
-   * @param[out] pDst       points to the block of output data.
-   * @param[in]  blockSize  number of samples to process.
-   */
-  void arm_biquad_cascade_df1_q31(
-  const arm_biquad_casd_df1_inst_q31 * S,
-  const q31_t * pSrc,
-        q31_t * pDst,
-        uint32_t blockSize);
 
-  /**
-   * @brief Fast but less precise processing function for the Q31 Biquad cascade filter for Cortex-M3 and Cortex-M4.
-   * @param[in]  S          points to an instance of the Q31 Biquad cascade structure.
-   * @param[in]  pSrc       points to the block of input data.
-   * @param[out] pDst       points to the block of output data.
-   * @param[in]  blockSize  number of samples to process.
-   */
-  void arm_biquad_cascade_df1_fast_q31(
-  const arm_biquad_casd_df1_inst_q31 * S,
-  const q31_t * pSrc,
-        q31_t * pDst,
-        uint32_t blockSize);
-
-  /**
-   * @brief  Initialization function for the Q31 Biquad cascade filter.
-   * @param[in,out] S          points to an instance of the Q31 Biquad cascade structure.
-   * @param[in]     numStages  number of 2nd order stages in the filter.
-   * @param[in]     pCoeffs    points to the filter coefficients.
-   * @param[in]     pState     points to the state buffer.
-   * @param[in]     postShift  Shift to be applied to the output. Varies according to the coefficients format
-   */
-  void arm_biquad_cascade_df1_init_q31(
-        arm_biquad_casd_df1_inst_q31 * S,
-        uint8_t numStages,
-  const q31_t * pCoeffs,
-        q31_t * pState,
-        int8_t postShift);
 
   /**
    * @brief Processing function for the floating-point Biquad cascade filter.
